@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>A Gentle Introduction to RMarkdown</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mohamed El Fodil Ihaddaden" />
+    <meta name="date" content="2020-07-18" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <link href="libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# A Gentle Introduction to RMarkdown
+### Mohamed El Fodil Ihaddaden
+### 2020-07-18
+
+---
+
+
+
+
+
+
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+
+  <head>
+
+<link
+  rel='stylesheet'
+  href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
+/>
+
+</head>
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>About</h1>
+---
+
+
+
++ ## <i class="fab  fa-chrome fa-3x "></i> https://ihaddadenfodil.com/
+
++ ## <i class="fab  fa-twitter fa-3x "></i> @moh_fodil
+
+&lt;img src= "picture/AlgiersRuserslogo.png" height = "250"&gt;
+
+
+
+
+
+---
+
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+
+  <head>
+
+<link
+  rel='stylesheet'
+  href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
+/>
+
+</head>
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>RMarkdown</h1>
+
+
+
+---
+
+
+## A package developed by __Yihui Xie__
+
++ ## Reproducibility
+
++ ## Automation 
+
++ ## Collaboration 
+
++ ## Integration
+
+
+---
+
+
+# Highly recommended talk !
+
+&lt;center&gt;
+
+&lt;iframe width="600" height="400" src="https://www.youtube.com/embed/s9aWmU0atlQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;/center&gt;
+
+
+---
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+
+  <head>
+
+<link
+  rel='stylesheet'
+  href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
+/>
+
+</head>
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>RMarkdown Anatomy</h1>
+
+
+
+
+---
+
+# Structure of an Rmd document 
+
+
++ #⭐ : Yaml (Metadata)
+
++ # ⭐: Text
+
++ # ⭐: code chunks
+
+
+---
+class: center, middle, inverse
+
+# I. Markdown 
+
+
+---
+
+# 1. Markdown Syntax
+&lt;hr&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+# I'm aware that _RMarkdown_ is __more__ than just `R + Markdown` 
+
+
+---
+
+# 2. Images 
+
+######https://ih1.redbubble.net/image.543355849.2004/flat,750x,075,f-pad,750x1000,f8f8f8.jpg
+
+&lt;center&gt;
+
+&lt;img src = https://ih1.redbubble.net/image.543355849.2004/flat,750x,075,f-pad,750x1000,f8f8f8.jpg height = 500px&gt;
+
+---
+
+## 2.1. The `include_graphics()` function
+
+
+
+```r
+picture_path &lt;- "https://ih1.redbubble.net/image.543355849.2004/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+
+knitr::include_graphics(path = picture_path)
+```
+
+&lt;img src="https://ih1.redbubble.net/image.543355849.2004/flat,750x,075,f-pad,750x1000,f8f8f8.jpg" width="40%" style="display: block; margin: auto;" /&gt;
+---
+class: center, middle
+
+# ⚡⚡ Help - Markdown Quick Reference
+
+![](https://media.giphy.com/media/stAq0LhzZE0RW/giphy.gif)
+
+
+---
+
+class: center, middle, inverse 
+
+# Styling the Markdown !
+
+
+---
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+
+  <head>
+
+<link
+  rel='stylesheet'
+  href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css'
+/>
+
+</head>
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>RMarkdown</h1>
+
+---
+
+# RMarkdown 👨‍❤️‍👨 Code + Text 
+
++ ## This is possible with code chunks 
+
+![example of code chunk](picture/R_chunk.png)
+
+
+---
+
+class: center
+
+# But wait !!!
+
+# Only R code ? 
+
+![](https://media.giphy.com/media/xT9KVmZwJl7fnigeAg/giphy.gif)
+
+--- 
+
+---
+
+class: center, middle
+
+#R, Python, SQL, Julia, C++, JavaScript, Stan ... 
+
+####`names(knitr::knit_engines$get())`
+
+
+![](https://media.giphy.com/media/3oz8xWiqIYbnkDN3lS/giphy.gif)
+
+---
+
+
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>R chunk</h1>
+
+---
+
+
+
+```r
+library(ggplot2)
+
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+```
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+```
+
+![](Rmd_Intro_files/figure-html/raw-plot-1.png)&lt;!-- --&gt;
+
+
+---
+class: center, middle, inverse 
+
+# Remove Messages and Warnings
+
+---
+
+
+
+```r
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+![](Rmd_Intro_files/figure-html/message-warning-1.png)&lt;!-- --&gt;
+
+
+---
+
+
+class: center, middle, inverse 
+
+# Modifying the size of the Plot
+
+---
+
+
+```r
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+&lt;img src="Rmd_Intro_files/figure-html/plot-size-1.png" width="50%" height="50%" /&gt;
+
+---
+
+
+```r
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+![](Rmd_Intro_files/figure-html/plot-size2-1.png)&lt;!-- --&gt;
+
+---
+
+class: center, middle, inverse 
+
+# Plot position
+
+---
+
+
+```r
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+&lt;img src="Rmd_Intro_files/figure-html/plot-positio-1.png" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+
+class: center, middle, inverse 
+
+# Hide the code
+
+---
+
+# hwy distrbution (mpg data frame)
+
+
+&lt;img src="Rmd_Intro_files/figure-html/code-hide-1.png" style="display: block; margin: auto;" /&gt;
+
+
+
+
+---
+
+
+class: center, middle, inverse 
+
+# Toggle the code appearance
+
+
+
+---
+
+## hide/show the code (like a Notebook !)
+
+![](picture/codefolding.png)
+
+
+
+---
+
+class: center, middle, inverse 
+
+# Multiple Figures in Multiple Columns
+
+---
+
+&lt;div class="figure"&gt;
+&lt;img src="Rmd_Intro_files/figure-html/several-figures-1.png" alt="distribution of hwy and cty variable" width="50%" /&gt;&lt;img src="Rmd_Intro_files/figure-html/several-figures-2.png" alt="distribution of hwy and cty variable" width="50%" /&gt;
+&lt;p class="caption"&gt;distribution of hwy and cty variable&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+
+class: center, middle, inverse 
+
+# Show the code, hide the plot
+
+---
+
+
+# How to plot the hwy variable distribution. 
+
+
+```r
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram(fill = "blue")
+```
+
+
+---
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>Tables in RMarkdown</h1>
+
+
+---
+
+class: center, middle, inverse 
+
+# Raw table output
+
+---
+
+
+
+
+```r
+head(mpg)
+```
+
+```
+## # A tibble: 6 x 11
+##   manufacturer model displ  year   cyl trans      drv     cty   hwy fl    class 
+##   &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;      &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; 
+## 1 audi         a4      1.8  1999     4 auto(l5)   f        18    29 p     compa~
+## 2 audi         a4      1.8  1999     4 manual(m5) f        21    29 p     compa~
+## 3 audi         a4      2    2008     4 manual(m6) f        20    31 p     compa~
+## 4 audi         a4      2    2008     4 auto(av)   f        21    30 p     compa~
+## 5 audi         a4      2.8  1999     6 auto(l5)   f        16    26 p     compa~
+## 6 audi         a4      2.8  1999     6 manual(m5) f        18    26 p     compa~
+```
+
+---
+
+class: center, middle, inverse 
+
+# kable function 
+
+
+---
+
+
+
+```r
+library(knitr)
+
+kable(head(mpg))
+```
+
+
+
+|manufacturer |model | displ| year| cyl|trans      |drv | cty| hwy|fl |class   |
+|:------------|:-----|-----:|----:|---:|:----------|:---|---:|---:|:--|:-------|
+|audi         |a4    |   1.8| 1999|   4|auto(l5)   |f   |  18|  29|p  |compact |
+|audi         |a4    |   1.8| 1999|   4|manual(m5) |f   |  21|  29|p  |compact |
+|audi         |a4    |   2.0| 2008|   4|manual(m6) |f   |  20|  31|p  |compact |
+|audi         |a4    |   2.0| 2008|   4|auto(av)   |f   |  21|  30|p  |compact |
+|audi         |a4    |   2.8| 1999|   6|auto(l5)   |f   |  16|  26|p  |compact |
+|audi         |a4    |   2.8| 1999|   6|manual(m5) |f   |  18|  26|p  |compact |
+
+---
+
+
+
+
+```r
+library(knitr)
+
+kable(x = head(mpg), 
+      caption = "An overview of the mpg data frame")
+```
+
+
+
+Table: An overview of the mpg data frame
+
+|manufacturer |model | displ| year| cyl|trans      |drv | cty| hwy|fl |class   |
+|:------------|:-----|-----:|----:|---:|:----------|:---|---:|---:|:--|:-------|
+|audi         |a4    |   1.8| 1999|   4|auto(l5)   |f   |  18|  29|p  |compact |
+|audi         |a4    |   1.8| 1999|   4|manual(m5) |f   |  21|  29|p  |compact |
+|audi         |a4    |   2.0| 2008|   4|manual(m6) |f   |  20|  31|p  |compact |
+|audi         |a4    |   2.0| 2008|   4|auto(av)   |f   |  21|  30|p  |compact |
+|audi         |a4    |   2.8| 1999|   6|auto(l5)   |f   |  16|  26|p  |compact |
+|audi         |a4    |   2.8| 1999|   6|manual(m5) |f   |  18|  26|p  |compact |
+
+
+---
+
+class: center, middle, inverse 
+
+# More with kableExtra 
+
+
+---
+
+
+
+```r
+library(kableExtra)
+
+head(mpg) %&gt;% 
+  kable(align = "c") %&gt;% 
+  column_spec(1:2, color = "#90170E",
+              background = "lightblue", 
+              bold = T) %&gt;% 
+  footnote(general = "kableExtra is awesome")
+```
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; manufacturer &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; model &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; displ &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; year &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; cyl &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; trans &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; drv &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; cty &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; hwy &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; fl &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; class &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; auto(l5) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; manual(m5) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 29 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; manual(m6) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 31 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2008 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; auto(av) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 21 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 30 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; auto(l5) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 16 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; audi &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: #90170E !important;background-color: lightblue !important;"&gt; a4 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2.8 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1999 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; manual(m5) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; f &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; p &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; compact &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tfoot&gt;
+&lt;tr&gt;&lt;td style="padding: 0; border: 0;" colspan="100%"&gt;&lt;span style="font-style: italic;"&gt;Note: &lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td style="padding: 0; border: 0;" colspan="100%"&gt;
+&lt;sup&gt;&lt;/sup&gt; kableExtra is awesome&lt;/td&gt;&lt;/tr&gt;
+&lt;/tfoot&gt;
+&lt;/table&gt;
+
+
+---
+
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>Table of Content (toc)</h1>
+
+---
+
+## Inserting a Table of Content 
+
+
+![](picture/toctrue.png)
+
+--
+
+
+## Inserting a Table of Content with Numbering 
+
+
+![](picture/tocnumbering.png)
+
+
+---
+
+## Inserting a Floating Table of Content
+
+![](picture/tocfloat.png)
+
+---
+## Controlling the position of the TOC 
+
+
+&amp;lt;script&amp;gt;
+
+$(function() {
+    $( "#TOC" ).insertAfter( $( "#table-of-contents" ) );
+  });
+  
+&amp;lt;script&amp;gt;
+
+
+---
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>RMarkdown Themes</h1>
+
+
+---
+
+
+## The {prettydoc} package
+######https://github.com/yixuan/prettydoc
+
+### A "lightweight yet nice-looking theme for R Markdown"
+
+### Déveloped by Yixuan Qiu
+
+![](picture/shinytheming.png)
+
+
+---
+
+background-image: url(picture/jonathan-kemper.jpg)
+background-position: 50% 50%
+class: center, middle
+
+
+<h1 style='color:black; display:inline-block' class='animate__animated animate__shakeX animate__repeat-3 animate__delay-0s animate__slow'>Tips</h1>
+
+
+---
+
+# An R Script is an Rmd Document !!!
+***
+
+## knitr::spin("script.R", knit = F, format = "Rmd")
+
+&lt;center&gt; 
+&lt;br&gt; 
+
+![](https://media.giphy.com/media/6ul9g1rMhfLH2/giphy.gif)
+
+---
+
+# An Rmd Document is an R Script !!!
+***
+
+## knitr::purl("Rmd_Intro.Rmd")
+
+
+&lt;center&gt;
+&lt;br&gt;
+
+![](https://media.giphy.com/media/bD0Sz4zQNSk4o/giphy.gif)
+
+
+---
+
+
+&lt;center&gt;
+
+&lt;br&gt;
+
+![](https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

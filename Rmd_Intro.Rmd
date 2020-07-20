@@ -1,7 +1,7 @@
 ---
 title: "A Gentle Introduction to RMarkdown"
 author: "Mohamed El Fodil Ihaddaden"
-institute: ""
+institute: "for R-Ladies Tunis"
 date: " `r Sys.Date()`"
 output:
   xaringan::moon_reader:
@@ -533,16 +533,16 @@ GomoGomonoMi::gomo_gomo_no("Table of Content (toc)", animation = "shakeX", repea
 ![](picture/tocfloat.png)
 
 ---
-## Controlling the position of the TOC 
+## Controlling the position of the Table of Content  
 
 
 &lt;script&gt;
 
 $(function() {
-    $( "#TOC" ).insertAfter( $( "#table-of-contents" ) );
+    $( "#TOC" ).insertAfter( $( "#table-of-content" ) );
   });
   
-&lt;script&gt;
+&lt;/script&gt;
 
 
 ---

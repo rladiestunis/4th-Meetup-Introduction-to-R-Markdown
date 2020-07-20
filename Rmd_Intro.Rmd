@@ -542,7 +542,7 @@ $(function() {
     $( "#TOC" ).insertAfter( $( "#table-of-contents" ) );
   });
   
-&lt;script&gt;
+&lt;/script&gt;
 
 
 ---

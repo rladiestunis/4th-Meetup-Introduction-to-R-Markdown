@@ -4,6 +4,8 @@ Through this github repository, we provide the code used.
 
 Please find [the presentation](https://feddelegrand7.github.io/Rmd_RL_Tunis/#1) as well.
 
+The workshop recording is also available on our [youtube channel :](https://www.youtube.com/watch?v=sRmsyE3edDI)
+
 Trainer :
 
 🟪 Mohamed El Fodil Ihaddaden : PhD Candidate in Economics, Msc in Statistics and Applied Economics, R developer, RStudio Certified Instructor https://ihaddadenfodil.com/
